@@ -1,9 +1,21 @@
 {
-  "description": "claude-code-notify-plugin: POST Notification and Stop hook events to a webhook URL.",
+  "description": "claude-code-notify-plugin: POST Notification, Stop, and ExitPlanMode events to a webhook URL.",
   "hooks": {
     "Notification": [
       {
         "matcher": "permission_prompt|elicitation_dialog",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT\"/hooks/notification.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "ExitPlanMode",
         "hooks": [
           {
             "type": "command",

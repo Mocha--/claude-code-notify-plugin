@@ -1,9 +1,10 @@
 # claude-code-notify-plugin
 
-Two bash hooks that POST to a webhook URL:
+Bash hooks that POST to a webhook URL whenever Claude needs you:
 
-- **Notification** — fires when Claude is blocked on user input (matcher: `permission_prompt|elicitation_dialog`).
-- **Stop** — fires when Claude finishes a turn.
+- **Notification** — permission prompts and AskUserQuestion dialogs (matcher: `permission_prompt|elicitation_dialog`).
+- **PreToolUse:ExitPlanMode** — when Claude exits plan mode and waits for plan approval.
+- **Stop** — when Claude finishes a turn.
 
 ## Install
 
