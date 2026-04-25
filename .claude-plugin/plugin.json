@@ -1,15 +1,23 @@
 {
   "name": "claude-code-notify-plugin",
   "version": "0.2.0",
-  "description": "POST Claude Code Notification and Stop hook events to a webhook URL.",
+  "description": "POST Claude Code Notification, PreToolUse:ExitPlanMode, and Stop hook events to a webhook URL.",
   "author": {
-    "name": "Xibo Wang"
+    "name": "Xibo Wang",
+    "email": "xibowangmelb@gmail.com",
+    "url": "https://github.com/Mocha--"
   },
+  "homepage": "https://github.com/Mocha--/claude-code-notify-plugin",
+  "repository": "https://github.com/Mocha--/claude-code-notify-plugin",
   "license": "MIT",
   "keywords": [
     "claude-code",
+    "claude-code-plugin",
     "plugin",
     "notification",
-    "webhook"
+    "webhook",
+    "hooks",
+    "slack",
+    "discord"
   ]
 }
