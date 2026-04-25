@@ -1,0 +1,32 @@
+{
+  "name": "mocha-plugins",
+  "owner": {
+    "name": "Xibo Wang",
+    "email": "xibowangmelb@gmail.com",
+    "url": "https://github.com/Mocha--"
+  },
+  "plugins": [
+    {
+      "name": "claude-code-notify-plugin",
+      "source": ".",
+      "description": "POST Claude Code Notification, PreToolUse:ExitPlanMode, and Stop hook events to a webhook URL.",
+      "version": "0.2.0",
+      "author": {
+        "name": "Xibo Wang"
+      },
+      "homepage": "https://github.com/Mocha--/claude-code-notify-plugin",
+      "repository": "https://github.com/Mocha--/claude-code-notify-plugin",
+      "license": "MIT",
+      "keywords": [
+        "claude-code",
+        "claude-code-plugin",
+        "plugin",
+        "notification",
+        "webhook",
+        "hooks",
+        "slack",
+        "discord"
+      ]
+    }
+  ]
+}

@@ -8,8 +8,18 @@ Bash hooks that POST to a webhook URL whenever Claude needs you:
 
 ## Install
 
-```bash
-claude plugin install /path/to/claude-code-notify-plugin
+In Claude Code:
+
+```
+/plugin marketplace add Mocha--/claude-code-notify-plugin
+/plugin install claude-code-notify-plugin@mocha-plugins
+```
+
+Or from a local checkout for development:
+
+```
+/plugin marketplace add /path/to/claude-code-notify-plugin
+/plugin install claude-code-notify-plugin@mocha-plugins
 ```
 
 ## Configure
