@@ -18,23 +18,37 @@ In Claude Code:
 
 ## Configure
 
-Set the webhook URL in your environment (e.g. `~/.zshrc`, `~/.bashrc`, or `~/.claude/settings.json` `env`):
+Set environment variables in `~/.zshrc`, `~/.bashrc`, or `~/.claude/settings.json` `env`:
+
+| Variable | Required | Description |
+|---|---|---|
+| `CLAUDE_NOTIFY_WEBHOOK_URL` | yes | Webhook URL. |
+| `CLAUDE_NOTIFY_NOTIFICATION_PAYLOAD` | yes | JSON body for `Notification` and `PreToolUse:ExitPlanMode`. POSTed verbatim. |
+| `CLAUDE_NOTIFY_STOP_PAYLOAD` | yes | JSON body for `Stop`. POSTed verbatim. |
+
+If any of these variables is missing, the hook exits non-zero and prints an error to stderr. Disable the plugin with `/plugin disable` if you want to silence it temporarily.
+
+## Payload examples
+
+Pick the shape your webhook expects:
 
 ```bash
 export CLAUDE_NOTIFY_WEBHOOK_URL="https://hooks.slack.com/triggers/..."
-export CLAUDE_NOTIFY_ORIGIN="🌰 Devbox"   # optional, defaults to "Claude Code"
+
+# Slack workflow trigger
+export CLAUDE_NOTIFY_NOTIFICATION_PAYLOAD='{"origin":"🌰 Devbox","message":"🚨 Waiting for input"}'
+export CLAUDE_NOTIFY_STOP_PAYLOAD='{"origin":"🌰 Devbox","message":"✅ Complete"}'
+
+# Discord
+export CLAUDE_NOTIFY_NOTIFICATION_PAYLOAD='{"content":"🚨 Claude needs you"}'
+export CLAUDE_NOTIFY_STOP_PAYLOAD='{"content":"✅ Claude finished"}'
+
+# ntfy
+export CLAUDE_NOTIFY_NOTIFICATION_PAYLOAD='{"topic":"claude","title":"Claude","message":"Waiting for input"}'
+export CLAUDE_NOTIFY_STOP_PAYLOAD='{"topic":"claude","title":"Claude","message":"Complete"}'
 ```
 
-If `CLAUDE_NOTIFY_WEBHOOK_URL` is unset, hooks no-op silently.
-
-## Payload
-
-```json
-{"origin": "🌰 Devbox", "message": "🚨 Waiting for input"}
-{"origin": "🌰 Devbox", "message": "✅ Complete"}
-```
-
-Works with anything that accepts `POST application/json` — Slack workflow triggers, Discord webhooks (with adjusted shape), ntfy, custom servers.
+The value is POSTed as `application/json` exactly as set — no templating, no substitution.
 
 ## Requirements
 
