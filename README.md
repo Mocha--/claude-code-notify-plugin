@@ -9,10 +9,17 @@ Bash hooks that POST to a webhook URL whenever Claude needs you:
 
 ## Install
 
-In Claude Code:
+In Claude Code.
+
+### 1. Add the marketplace
 
 ```
 /plugin marketplace add Mocha--/claude-code-notify-plugin
+```
+
+### 2. Install the plugin
+
+```
 /plugin install claude-code-notify-plugin@mocha-plugins
 ```
 
