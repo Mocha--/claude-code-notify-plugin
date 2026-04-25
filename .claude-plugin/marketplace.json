@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "claude-code-notify-plugin",
-      "source": ".",
+      "source": "./",
       "description": "POST Claude Code Notification, PreToolUse:ExitPlanMode, and Stop hook events to a webhook URL.",
       "version": "0.2.0",
       "author": {
