@@ -1,0 +1,15 @@
+{
+  "name": "claude-code-notify-plugin",
+  "version": "0.2.0",
+  "description": "POST Claude Code Notification and Stop hook events to a webhook URL.",
+  "author": {
+    "name": "Xibo Wang"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "notification",
+    "webhook"
+  ]
+}
