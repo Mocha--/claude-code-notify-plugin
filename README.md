@@ -1,5 +1,6 @@
 # claude-code-notify-plugin
 
+## Overview
 Bash hooks that POST to a webhook URL whenever Claude needs you:
 
 - **Notification** — permission prompts and AskUserQuestion dialogs (matcher: `permission_prompt|elicitation_dialog`).
@@ -12,13 +13,6 @@ In Claude Code:
 
 ```
 /plugin marketplace add Mocha--/claude-code-notify-plugin
-/plugin install claude-code-notify-plugin@mocha-plugins
-```
-
-Or from a local checkout for development:
-
-```
-/plugin marketplace add /path/to/claude-code-notify-plugin
 /plugin install claude-code-notify-plugin@mocha-plugins
 ```
 
