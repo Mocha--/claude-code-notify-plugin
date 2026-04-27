@@ -55,7 +55,7 @@ After either option, restart Claude Code so the hook subprocess inherits the new
 
 ## Payload examples
 
-Pick the shape your webhook expects:
+The payload shape is entirely up to you — whatever JSON your webhook accepts. The plugin POSTs the value as `application/json` exactly as set, with no templating or substitution. The examples below are just starting points for common destinations:
 
 ```bash
 export CLAUDE_NOTIFY_WEBHOOK_URL="https://hooks.slack.com/triggers/..."
@@ -73,7 +73,7 @@ export CLAUDE_NOTIFY_NOTIFICATION_PAYLOAD='{"topic":"claude","title":"Claude","m
 export CLAUDE_NOTIFY_STOP_PAYLOAD='{"topic":"claude","title":"Claude","message":"Complete"}'
 ```
 
-The value is POSTed as `application/json` exactly as set — no templating, no substitution.
+For anything else, check your webhook's docs for the expected request body and put that JSON in the payload variables.
 
 ## Requirements
 
