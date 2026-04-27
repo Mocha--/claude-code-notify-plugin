@@ -25,7 +25,7 @@ In Claude Code.
 
 ## Configure
 
-Set environment variables in `~/.zshrc`, `~/.bashrc`, or `~/.claude/settings.json` `env`:
+Three environment variables are required:
 
 | Variable | Required | Description |
 |---|---|---|
@@ -34,6 +34,24 @@ Set environment variables in `~/.zshrc`, `~/.bashrc`, or `~/.claude/settings.jso
 | `CLAUDE_NOTIFY_STOP_PAYLOAD` | yes | JSON body for `Stop`. POSTed verbatim. |
 
 If any of these variables is missing, the hook exits non-zero and prints an error to stderr. Disable the plugin with `/plugin disable` if you want to silence it temporarily.
+
+Pick one of:
+
+### Option A — guided setup via skill
+
+After installing the plugin, ask Claude:
+
+```
+configure notify plugin
+```
+
+This invokes the bundled `configure` skill, which inspects your existing config (shell rc files + `~/.claude/settings.json`), asks where to write the vars, generates payloads for Slack / Discord / ntfy / custom shapes, and writes them for you.
+
+### Option B — set them manually
+
+Export them in `~/.zshrc`, `~/.bashrc`, or add them under `env` in `~/.claude/settings.json`. See [Payload examples](#payload-examples) below.
+
+After either option, restart Claude Code so the hook subprocess inherits the new env.
 
 ## Payload examples
 
