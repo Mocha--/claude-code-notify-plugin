@@ -1,5 +1,5 @@
 {
-  "description": "claude-code-notify-plugin: POST Notification, Stop, and ExitPlanMode events to a webhook URL.",
+  "description": "claude-code-notify-plugin: POST Notification, Stop, ExitPlanMode, and AskUserQuestion events to a webhook URL.",
   "hooks": {
     "Notification": [
       {
@@ -15,7 +15,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "ExitPlanMode",
+        "matcher": "ExitPlanMode|AskUserQuestion",
         "hooks": [
           {
             "type": "command",

@@ -1,7 +1,7 @@
 {
   "name": "claude-code-notify-plugin",
-  "version": "0.4.0",
-  "description": "POST Claude Code Notification, PreToolUse:ExitPlanMode, and Stop hook events to a webhook URL.",
+  "version": "0.5.0",
+  "description": "POST Claude Code Notification, PreToolUse:ExitPlanMode, PreToolUse:AskUserQuestion, and Stop hook events to a webhook URL.",
   "author": {
     "name": "Xibo Wang",
     "email": "xibowangmelb@gmail.com",
